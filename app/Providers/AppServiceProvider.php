@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use Dedoc\Scramble\Scramble;
 use Dedoc\Scramble\Support\Generator\OpenApi;
 use Dedoc\Scramble\Support\Generator\SecurityScheme;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(\Illuminate\Http\Request $request): void
+    public function boot(): void
     {
         //
         Scramble::configure()
@@ -29,8 +31,11 @@ class AppServiceProvider extends ServiceProvider
                     SecurityScheme::http('bearer')
                 );
             });
-        if (!empty( env('NGROK_URL') ) && $request->server->has('HTTP_X_ORIGINAL_HOST')) {
-            $this->app['url']->forceRootUrl(env('NGROK_URL'));
+        if (config('app.env') !== 'local') {
+            URL::forceScheme('https');
         }
+        Gate::define('viewApiDocs', function ($user = null) {
+            return true; // Accès public
+        });
     }
 }
