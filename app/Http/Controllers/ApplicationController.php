@@ -13,7 +13,7 @@ class ApplicationController extends Controller
     {
         $this->authorize('viewAny', Application::class);
 
-        $applications = Application::all();
+        $applications = Application::where('user_id', auth()->id())->get();
         $applications->load('user', 'diploma','diploma.school');
         return ApplicationResource::collection($applications);
     }
