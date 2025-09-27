@@ -1,0 +1,29 @@
+.DS_Store
+.dockerignore
+.git
+.gitignore
+.idea
+.env.local
+.env.testing
+.phpunit.result.cache
+
+# Dépendances
+/vendor
+/node_modules
+composer.lock
+package-lock.json
+yarn.lock
+
+# Logs spécifiques (mais on garde les dossiers)
+storage/logs/*.log
+bootstrap/cache/*.php
+
+# Tests
+/tests
+phpunit.xml
+
+# Development files
+/public/storage
+/public/hot
+README.md
+.editorconfig
