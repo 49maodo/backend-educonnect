@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     libicu-dev \
     libpq-dev \
-    && docker-php-ext-install pdo_pgsql zip exif pcntl bcmath gd intl mbstring sodium \
+    && docker-php-ext-install pdo_pgsql zip exif pcntl bcmath gd intl mbstring sodium
 
 # Installer Composer
 COPY --from=composer:2.7 /usr/bin/composer /usr/bin/composer
