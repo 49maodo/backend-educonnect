@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Schools;
 use App\Filament\Resources\Schools\Pages\CreateSchool;
 use App\Filament\Resources\Schools\Pages\EditSchool;
 use App\Filament\Resources\Schools\Pages\ListSchools;
+use App\Filament\Resources\Schools\RelationManagers\DiplomasRelationManager;
 use App\Filament\Resources\Schools\Schemas\SchoolForm;
 use App\Filament\Resources\Schools\Tables\SchoolsTable;
 use App\Models\School;
@@ -35,7 +36,7 @@ class SchoolResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            DiplomasRelationManager::class,
         ];
     }
 

@@ -30,6 +30,7 @@ class SchoolForm
                 TextInput::make('accreditations')
                     ->required(),
                 Toggle::make('is_active')
+                    ->default(true)
                     ->required(),
                 TextInput::make('application_fee_amount')
                     ->required()

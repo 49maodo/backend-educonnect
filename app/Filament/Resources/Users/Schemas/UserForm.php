@@ -28,6 +28,7 @@ class UserForm
                     ->options(UserRole::class)
                     ->default('user'),
                 Toggle::make('is_active')
+                    ->default(true)
                     ->required(),
             ]);
     }

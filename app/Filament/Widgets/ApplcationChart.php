@@ -7,7 +7,7 @@ use Filament\Widgets\ChartWidget;
 
 class ApplcationChart extends ChartWidget
 {
-    protected static ?int $sort = 6;
+    protected static ?int $sort = 4;
     protected ?string $heading = 'Répartition des candidatures par statut';
 
     protected function getData(): array

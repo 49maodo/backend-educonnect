@@ -43,8 +43,8 @@ class DiplomaResource extends Resource
     {
         return [
             'index' => ListDiplomas::route('/'),
-            'create' => CreateDiploma::route('/create'),
-            'edit' => EditDiploma::route('/{record}/edit'),
+//            'create' => CreateDiploma::route('/create'),
+//            'edit' => EditDiploma::route('/{record}/edit'),
         ];
     }
 }

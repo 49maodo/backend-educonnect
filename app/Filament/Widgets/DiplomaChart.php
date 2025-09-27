@@ -7,7 +7,7 @@ use Filament\Widgets\ChartWidget;
 
 class DiplomaChart extends ChartWidget
 {
-    protected static ?int $sort = 5;
+    protected static ?int $sort = 3;
     protected ?string $heading = 'Répartition des diplômes par niveau';
 
     protected function getData(): array
